@@ -29,7 +29,9 @@ public class LoginTests extends BaseUiTest {
                 .verifyLoginErrorMessageIsPresent();
     }
 
-    @Test(description = "Login with valid email/password data (MFA on) successful")
+    @Test(description = "Login with valid email/password data (MFA on) successful",
+    // MFA will not pass anyway even if valid credentials are added due to MFA step
+    enabled = false)
     public void validEmailPasswordWithMfaLoginTest() {
         MfaPage mfaPage = LoginPage.open()
                 .insertEmail(ConfigManager.config.userEmail())

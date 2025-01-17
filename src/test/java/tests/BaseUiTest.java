@@ -14,10 +14,10 @@ import org.testng.annotations.BeforeSuite;
 
 public abstract class BaseUiTest {
 
-    protected static PhoneClient phoneClient;
+    protected PhoneClient phoneClient;
 
     @BeforeSuite(alwaysRun = true)
-    public static void setUp() {
+    public void setUp() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-extensions");
